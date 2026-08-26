@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Iqbal & Ai Linda</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <audio id="background-music" loop preload="auto">
+        <source src="ssstik.io_1787371684866.mp3" type="audio/mpeg">
+    </audio>
+    
+    <div class="invitation-container">
+        
+        <!-- =====================================
+             BAGIAN 1: HALAMAN AWAL (COVER)
+             ===================================== -->
+        <div id="cover-page" class="cover-section active-page">
+            <div class="text-section">
+                <h1>You're Invited</h1>
+                <h2>To Our Wedding</h2>
+            </div>
+            <div class="envelope-section">
+                <img src="envelope.png" alt="Amplop Undangan Marun" class="envelope-img">
+            </div>
+            <button id="open-invitation" class="btn-open">
+                <p>CLICK TO OPEN</p>
+            </button>
+        </div>
+
+        <!-- =====================================
+             BAGIAN 2: HALAMAN UTAMA (SCROLL)
+             ===================================== -->
+        <div id="main-invitation" class="main-section hidden-page">
+            
+            <div class="invitation-page">
+                <div class="top-section">
+                    <img src="Surat terbuka.png" alt="Amplop Terbuka" class="envelope-img multiply-blend">
+                    <img src="kupu kupu.png" alt="Kupu Kupu" class="butterfly-img multiply-blend delay-kupu">
+                </div>
+                <div class="middle-section">
+                    <div class="left-col">
+                        <img src="kata kata.png" alt="Kartu Tengah" class="kartu-tengah-img delay-vinyl">
+                        <img src="i dan a.png" alt="Inisial I dan A" class="frame-inisial delay-inisial">
+                    </div>
+                    <div class="right-col">
+                        <img src="Nama.png" alt="Detail Undangan" class="frame-undangan delay-undangan">
+                    </div>
+                </div>
+
+            <div class="bride-section hidden-on-scroll">
+                <div class="bride-photo-container">
+                    <img src="pengantin Wanita.png" alt="Foto Ai Linda" class="bride-img multiply-blend">
+                    <img src="Bunga.png" alt="Hiasan Bunga" class="bride-flower multiply-blend">
+                </div>
+                <div class="bride-info">
+                    <div class="typing-wrapper type-1">
+                        <h2 class="bride-title">The Bride</h2>
+                    </div>
+                    <div class="typing-wrapper type-2">
+                        <h1 class="bride-name">Ai Linda, S.Pd</h1>
+                    </div>
+                    <div class="typing-wrapper type-3">
+                        <p class="bride-parents">Putri ke - 2 dari<br>Bapak Otang Setiawan & Ibu Yani Cahyani</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="groom-section hidden-on-scroll">
+                <div class="groom-photo-container">
+                    <img src="Teks paragraf Anda.png" alt="Foto Iqbal" class="groom-img multiply-blend">
+                    <img src="Bunga.png" alt="Hiasan Bunga" class="groom-flower multiply-blend">
+                </div>
+                <div class="groom-info">
+                    <div class="typing-wrapper type-1">
+                        <h2 class="bride-title">The Groom</h2>
+                    </div>
+                    <div class="typing-wrapper type-2">
+                        <h1 class="bride-name">M Iqbal Mawahibul La Dunia, S.Pd.</h1>
+                    </div>
+                    <div class="typing-wrapper type-3">
+                        <p class="bride-parents">Putra Tunggal dari<br>Bapak Ceng Walim & Ibu Ai Siti Aisah, S.Pd.I</p>
+                    </div>
+                </div>
+            </div>
+
+           <!-- =====================================
+                 BAGIAN 5: COUNTDOWN & DETAIL ACARA
+                 ===================================== -->
+            <div class="event-section hidden-on-scroll">
+                
+                <div class="typing-wrapper type-ev-1">
+                    <h2 class="event-script-title">Counting Days</h2>
+                </div>
+
+                <div class="timer-container">
+                    <div class="typing-wrapper type-ev-2">
+                        <div id="timer-display" class="timer-text">00:00:00:00</div>
+                    </div>
+                </div>
+
+                <div class="typing-wrapper type-ev-3">
+                    <div class="badge-date">Save The Date</div>
+                </div>
+
+                <div class="typing-wrapper type-ev-4">
+                    <p class="event-main-date">Minggu , 06 September 2026</p>
+                </div>
+
+                <div class="typing-wrapper type-ev-5">
+                    <h3 class="event-sub-script">Akad Nikah</h3>
+                </div>
+                <div class="typing-wrapper type-ev-6">
+                    <p class="event-time">08.30. Wib s/d Selesai</p>
+                </div>
+
+                <div class="typing-wrapper type-ev-7">
+                    <h3 class="event-sub-script">Resepsi</h3>
+                </div>
+                <div class="typing-wrapper type-ev-8">
+                    <p class="event-time">11.00. Wib s/d Selesai</p>
+                </div>
+
+                <div class="typing-wrapper type-ev-9">
+                    <p class="event-address">Kp. Cibuntu, RT/RW: 003/011,</p>
+                </div>
+                <div class="typing-wrapper type-ev-10">
+                    <p class="event-address">Des. Pasanggrahan Kec. Sukawening,</p>
+                </div>
+                <div class="typing-wrapper type-ev-11">
+                    <p class="event-address">Kab. Garut</p>
+                </div>
+
+                <div class="maps-container type-ev-12">
+                    <a href="https://goo.gl/maps/MZ1kNRUpeTrzBLMv8?g_st=aw" target="_blank" class="badge-date btn-maps">Buka Google Maps</a>
+                </div>
+
+            </div>
+
+           <!-- =====================================
+                 BAGIAN 6: OUR GALLERY
+                 ===================================== -->
+            <div class="gallery-section hidden-on-scroll">
+                
+                <div class="flower-top-left-wrap">
+                    <img src="bunga atas.png" alt="Bunga Kiri" class="bunga-kiri multiply-blend">
+                </div>
+
+                <div class="flower-top-right-wrap">
+                    <img src="bunga atas.png" alt="Bunga Kanan" class="bunga-kanan multiply-blend">
+                </div>
+
+                <div class="typing-wrapper type-gal-1">
+                    <h2 class="gallery-title">Our Gallery</h2>
+                </div>
+
+                <div class="gallery-grid">
+                    <img src="galeri 1.jpeg" alt="Galeri 1" class="gallery-img gal-anim-1">
+                    <img src="galeri 2.jpeg" alt="Galeri 2" class="gallery-img gal-anim-2">
+                    <img src="galeri 3.jpeg" alt="Galeri 3" class="gallery-img gal-anim-3">
+                    <img src="galeri 4.jpeg" alt="Galeri 4" class="gallery-img gal-anim-4">
+                </div>
+
+            </div>
+
+        <!-- =====================================
+                 BAGIAN 7: LOVE STORY
+                 ===================================== -->
+            <div class="lovestory-section hidden-on-scroll">
+
+                <div class="typing-wrapper type-ls-1">
+                    <h2 class="story-main-title">Love Story</h2>
+                </div>
+
+                <div class="timeline-container">
+                    
+                    <div class="timeline-item left ls-anim-1">
+                        <img src="umbul bunga.png" alt="Bunga" class="paper-flower flower-top-right multiply-blend">
+                        <h3 class="story-title">When We First Met</h3>
+                        <p class="story-date">2024</p>
+                        <p class="story-text">Kami percaya, tidak ada pertemuan yang benar benar kebetulan. Ada doa yang diam diam di kabulkan, ada langkah yang diarahkan tanpa kita sadari. Dan Allah Swt, dengan cara-Nya yang paling tenang, menuntun kami sampai di titik ini.</p>
+                    </div>
+
+                    <div class="timeline-item right ls-anim-2">
+                        <img src="umbul bunga.png" alt="Bunga" class="paper-flower flower-kiri-atas multiply-blend">
+                        <h3 class="story-title">The Proposal</h3>
+                        <p class="story-date">2025</p>
+                        <p class="story-text">Tidak semua awal perlu diceritakan panjang, karena yang bertahan akan selalu menemukan jalannya. Bukan karena semuanya sempurna, melainkan karna kami terus belajar untuk tumbuh bersama.</p>
+                    </div>
+
+                    <div class="timeline-item left ls-anim-3">
+                        <img src="umbul bunga.png" alt="Bunga" class="paper-flower flower-top-right multiply-blend">
+                        <h3 class="story-title">The Wedding</h3>
+                        <p class="story-date">2026</p>
+                        <p class="story-text">Hingga pada waktunya, segala yang telah kami lewati bermuara pada satu keputusan yang sama. Dengan penuh syukur kami memilih untuk saling menetap dalam ikatan yang diridhai oleh-Nya. Semoga perjalan ini selalu diliputi ketenangan, dan dipelihara dalam kebaikan yang panjang.</p>
+                    </div>
+                </div>
+            </div>
+
+           <!-- =====================================
+                 BAGIAN 8: WEDDING GIFT (TEMA ARCH)
+                 ===================================== -->
+            <div class="gift-section hidden-on-scroll">
+
+                <div class="gift-arch-container fade-gf-1">
+                    
+                    <h2 class="gift-arch-title">Wedding Gift</h2>
+
+                    <div class="bank-item fade-gf-2">
+                        <img src="Dana.png" alt="Dana" class="bank-logo">
+                        <p id="rek-Dana" class="bank-number">085157635569</p>
+                        <p class="bank-owner">a.n. Ai Linda</p>
+                        <button onclick="salinRekening('rek-Dana', this)" class="btn-copy-small">
+                            📋 Copy
+                        </button>
+                    </div>
+
+                    <div class="bank-item fade-gf-3">
+                        <img src="Mandiri.png" alt="Mandiri" class="bank-logo">
+                        <p id="rek-Mandiri" class="bank-number">1770026595097</p>
+                        <p class="bank-owner">a.n. Muhamad Iqbal Mawahibul La Dunia</p>
+                        <button onclick="salinRekening('rek-Mandiri', this)" class="btn-copy-small">
+                            📋 Copy
+                        </button>
+                    </div>
+
+                    <div class="gift-address-item fade-gf-4">
+                        <h3 class="address-title">Wedding Gift Address</h3>
+                        <p class="physical-address">
+                            Kp. Cibuntu, RT/RW: 003/011,<br>
+                            Des. Pasanggrahan Kec. Sukawening,<br>
+                            Kab. Garut<br>
+                            Penerima: Ai Linda
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        <!-- =====================================
+             BAGIAN 9: WISHES (BUKU TAMU)
+             ===================================== -->
+            <div class="wishes-section hidden-on-scroll">
+                <div class="arch-container-tall fade-in">
+                    <img src="bnga.png" alt="Bunga" class="flower-top-arch multiply-blend">
+                    
+                    <h2 class="section-title">Wishes</h2>
+                    <p class="section-subtitle">Silakan berikan doa dan ucapan terbaik Anda untuk kami melalui form di bawah ini.</p>
+                    
+                    <div class="form-container">
+                        <input type="text" id="namaTamu" placeholder="Nama Anda" class="input-field">
+                        <textarea id="ucapanTamu" placeholder="Tulis doa dan ucapan Anda" class="input-field textarea-field"></textarea>
+                        <button onclick="kirimUcapan()" class="btn-send">Kirim Ucapan</button>
+                    </div>
+
+                    <!-- Tempat Ucapan Baru Akan Muncul -->
+                    <div class="comments-container" id="daftarUcapan">
+                        <div class="comment-box">
+                            <div class="comment-header">
+                                <span class="comment-name">Dyu</span>
+                                <span class="comment-check">✔</span>
+                            </div>
+                            <p class="comment-text">Semoga lancar sampai hari H!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           <!-- =====================================
+                 BAGIAN 10: RSVP
+                 ===================================== -->
+            <div class="rsvp-section hidden-on-scroll">
+                <div class="arch-container-tall fade-in">
+                    <h2 class="section-title">RSVP</h2>
+                    <p class="section-subtitle">Konfirmasi kehadiran Anda melalui form di bawah ini.</p>
+                    
+                    <div class="form-container">
+                        <input type="text" id="namaRsvp" placeholder="Nama Anda" class="input-field">
+                        
+                        <div class="radio-group">
+                            <label><input type="radio" name="statusHadir" value="Hadir"> Hadir</label>
+                            <label><input type="radio" name="statusHadir" value="Tidak Hadir"> Tidak Hadir</label>
+                        </div>
+
+                        <select id="jumlahTamu" class="input-field">
+                            <option value="">Jumlah Tamu</option>
+                            <option value="1">1 Orang</option>
+                            <option value="2">2 Orang</option>
+                        </select>
+
+                        <input type="text" id="domisili" placeholder="Domisili / Asal (Opsional)" class="input-field">
+                        
+                        <button id="btnKirimRsvp" onclick="kirimRSVP()" class="btn-send">Kirim Konfirmasi</button>
+                    </div>
+                </div>
+            </div>
+
+           <!-- =====================================
+                 BAGIAN 11: PENUTUP (TEMA LORONG MEGAH)
+                 ===================================== -->
+            <div class="closing-section hidden-on-scroll">
+                
+                <div class="closing-top fade-in">
+                    <div class="closing-image-wrapper">
+                        <img src="penutup.jpeg" alt="Iqbal & Ai Linda" class="closing-img">
+                    </div>
+                    <p class="closing-text">It would be a great joy for us if you could join us on our special day. Thank you for all the kind wishes, prayers, and warm attention you have given.</p>
+                </div>
+
+                <div class="closing-bottom arch-grand fade-in">
+                    <h2 class="closing-names">Iqbal & Ai Linda</h2>
+                    
+                    <div class="social-icons">
+                        <span class="icon-bulat">📷</span>
+                        <span class="icon-bulat">💬</span>
+                        <span class="icon-bulat">🎵</span>
+                    </div>
+                </div>
+            </div>
+
+        <!-- INI 3 PENUTUP WADAH YANG HILANG -->
+        </div> 
+    </div> 
+</div> 
+
+<!-- SCRIPT COPY REKENING KEMBALI DIMASUKKAN DI SINI -->
+<script>
+    function salinRekening(idElemen, tombol) {
+        var teksRekening = document.getElementById(idElemen).innerText;
+        var inputRahasia = document.createElement("input");
+        inputRahasia.value = teksRekening;
+        document.body.appendChild(inputRahasia);
+        
+        inputRahasia.select();
+        inputRahasia.setSelectionRange(0, 99999); 
+        document.execCommand("copy"); 
+        document.body.removeChild(inputRahasia);
+
+        tombol.innerHTML = "✔ Tersalin";
+        tombol.style.backgroundColor = "#4caf50";
+        
+        setTimeout(function() {
+            tombol.innerHTML = "📋 Copy";
+            tombol.style.backgroundColor = "#6b3838";
+        }, 2000);
+    }
+</script>
+
+<!-- SCRIPT BUKU TAMU (TERHUBUNG KE GOOGLE SHEETS) -->
+<script>
+    // Ini adalah link Google Sheets Anda
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxBRojOwUcAxOVamL7F5YgWwfsaeJ5fYdo9ULAClGdEJyIPa4HsvmvcNd7tgWAwewy4Xw/exec';
+
+    function kirimUcapan() {
+        var nama = document.getElementById("namaTamu").value;
+        var ucapan = document.getElementById("ucapanTamu").value;
+        var tombol = document.querySelector(".wishes-section .btn-send");
+        
+        if(nama === "" || ucapan === "") {
+            alert("Mohon isi nama dan ucapan Anda terlebih dahulu ya!");
+            return;
+        }
+
+        // Mengubah teks tombol saat proses pengiriman
+        tombol.innerHTML = "Mengirim...";
+        tombol.disabled = true;
+
+        // Menyiapkan data untuk dikirim ke Google Sheets
+        var formData = new FormData();
+        formData.append('nama', nama);
+        formData.append('ucapan', ucapan);
+
+        // Proses mengirim data
+        fetch(scriptURL, { method: 'POST', body: formData})
+            .then(response => {
+                // Jika berhasil terkirim, tampilkan ucapan di undangan
+                var kotakBaru = document.createElement("div");
+                kotakBaru.className = "comment-box";
+                
+                kotakBaru.innerHTML = `
+                    <div class="comment-header">
+                        <span class="comment-name">${nama}</span>
+                        <span class="comment-check">✔</span>
+                    </div>
+                    <p class="comment-text">${ucapan}</p>
+                `;
+
+                var daftar = document.getElementById("daftarUcapan");
+                daftar.insertBefore(kotakBaru, daftar.firstChild); // Memasukkan di urutan paling atas
+
+                // Mengosongkan form dan mengembalikan tombol
+                document.getElementById("namaTamu").value = "";
+                document.getElementById("ucapanTamu").value = "";
+                tombol.innerHTML = "Kirim Ucapan";
+                tombol.disabled = false;
+                
+                alert("Terima kasih! Ucapan Anda berhasil disimpan.");
+            })
+            .catch(error => {
+                alert("Maaf, terjadi kesalahan jaringan. Silakan coba lagi.");
+                tombol.innerHTML = "Kirim Ucapan";
+                tombol.disabled = false;
+            });
+    }
+
+// --- FUNGSI MENGIRIM DATA RSVP ---
+    function kirimRSVP() {
+        var nama = document.getElementById("namaRsvp").value;
+        var jumlah = document.getElementById("jumlahTamu").value;
+        var domisili = document.getElementById("domisili").value;
+        var tombol = document.getElementById("btnKirimRsvp");
+        
+        // Mengecek pilihan Hadir / Tidak Hadir
+        var kehadiran = "";
+        var radioHadir = document.getElementsByName("statusHadir");
+        for (var i = 0; i < radioHadir.length; i++) {
+            if (radioHadir[i].checked) {
+                kehadiran = radioHadir[i].value;
+                break;
+            }
+        }
+        
+        // Memastikan Nama dan Pilihan Kehadiran tidak kosong
+        if(nama === "" || kehadiran === "") {
+            alert("Mohon isi Nama dan Kepastian Kehadiran Anda!");
+            return;
+        }
+
+        // Efek tombol saat memuat
+        tombol.innerHTML = "Mengirim...";
+        tombol.disabled = true;
+
+        // Menyiapkan data
+        var formData = new FormData();
+        formData.append('nama', nama);
+        formData.append('kehadiran', kehadiran);
+        formData.append('jumlah', jumlah);
+        formData.append('domisili', domisili);
+
+        // Mengirim data ke Google Sheets
+        fetch(scriptURL, { method: 'POST', body: formData})
+            .then(response => {
+                // Mengosongkan form setelah sukses
+                document.getElementById("namaRsvp").value = "";
+                document.getElementById("jumlahTamu").value = "";
+                document.getElementById("domisili").value = "";
+                for (var i = 0; i < radioHadir.length; i++) radioHadir[i].checked = false;
+                
+                tombol.innerHTML = "Kirim Konfirmasi";
+                tombol.disabled = false;
+                alert("Terima kasih! Konfirmasi kehadiran Anda berhasil disimpan.");
+            })
+            .catch(error => {
+                alert("Maaf, terjadi kesalahan jaringan. Silakan coba lagi.");
+                tombol.innerHTML = "Kirim Konfirmasi";
+                tombol.disabled = false;
+            });
+    }
+
+<!-- SCRIPT SENSOR SCROLL (MEMUNCULKAN ANIMASI OTOMATIS) -->
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('tampil-scroll');
+                }
+            });
+        }, { threshold: 0.15 }); 
+
+        // Typo 'documen' sudah diperbaiki menjadi 'document' di baris ini
+        const halamanSembunyi = document.querySelectorAll('.hidden-on-scroll, .invitation-page, .event-section, .lovestory-section, .gallery-section, .gift-section, .wishes-section, .rsvp-section, .closing-section');
+        
+        halamanSembunyi.forEach((el) => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+</body>
+</html>

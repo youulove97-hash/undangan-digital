@@ -1,0 +1,1192 @@
+/* =========================================
+   STYLE.CSS UNTUK UNDANGAN PERNIKAHAN
+   ========================================= */
+
+/* PERBAIKAN: Mengimpor 3 Font - Great Vibes (Kaligrafi), Playfair (Nama), Cinzel (Judul) */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600&family=Cinzel:wght@400;600&display=swap');
+
+body {
+    background-image: url('Bacround.jpg'); 
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Cinzel', serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.multiply-blend { mix-blend-mode: multiply; }
+
+.invitation-container {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.active-page { display: flex !important; flex-direction: column; width: 100%; }
+.hidden-page { display: none !important; }
+
+/* =========================================
+   BAGIAN 1: COVER
+   ========================================= */
+.cover-section {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+@keyframes slideInFromTop {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cover-section h1 {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 4.5rem;
+    color: #2b2b2b;
+    margin-top: 0;
+    margin-bottom: 5px; 
+    font-weight: normal;
+    text-transform: none;
+    opacity: 0;
+    animation: slideInFromTop 1.2s ease-out forwards 0.2s;
+}
+
+.cover-section h2 {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 3rem;
+    color: #2b2b2b;
+    margin: 0 0 20px 0;
+    font-weight: normal; 
+    text-transform: none;
+    opacity: 0;
+    animation: slideInFromTop 1s ease-out forwards 0.6s;
+}
+
+.envelope-section { width: 70%; margin-bottom: 20px; }
+.cover-section .envelope-img { width: 100%; height: auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); }
+
+.btn-open {
+    display: inline-block;
+    text-decoration: none;
+    color: #4a2323;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 30px;
+    border: 2px solid #6b3838;
+    background-color: rgba(255, 250, 245, 0.8);
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.btn-open:hover { background-color: #6b3838; color: white; }
+.btn-open p { margin: 0; animation: textFlicker 1s infinite; }
+
+@keyframes textFlicker { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+
+/* =========================================
+   BAGIAN 2: HALAMAN UTAMA
+   ========================================= */
+.main-section { width: 100%; align-items: center; }
+
+.invitation-page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 10px;
+    box-sizing: border-box;
+}
+
+#main-invitation img { opacity: 0; }
+
+@keyframes slideDatarMasuk { from { opacity: 0; transform: translateX(-100%); } to { opacity: 1; transform: translateX(0); } }
+@keyframes spinVinyl { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes ngepakKupu { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(1.3); } }
+
+.top-section { position: relative; width: 100%; display: flex; justify-content: center; margin-bottom: 20px; }
+.butterfly-img { position: absolute; top: -10px; right: 5px; max-width: 120px; z-index: 10; }
+
+.middle-section { width: 100%; display: flex; justify-content: space-between; align-items: flex-start; margin-top: -15px; }
+.left-col { width: 40%; display: flex; flex-direction: column; align-items: center; }
+.right-col { width: 58%; display: flex; flex-direction: column; align-items: center; }
+
+.frame-inisial { width: 90%; height: auto; margin-bottom: 25px; }
+.vinyl-img { width: 200px; height: auto; border-radius: 50%; }
+.frame-undangan { width: 100%; height: auto; }
+
+.visible-invitation img { animation: slideDatarMasuk 1s ease-out forwards; }
+.visible-invitation .top-section .envelope-img { animation-delay: 0.2s; }
+.visible-invitation .butterfly-img { animation-delay: 0.4s; }
+.visible-invitation .frame-inisial { animation-delay: 0.6s; }
+.visible-invitation .frame-undangan { animation-delay: 0.8s; }
+.visible-invitation .vinyl-img { animation-delay: 1.0s; }
+
+.kupu-flap { animation: ngepakKupu 0.5s ease-in-out infinite !important; opacity: 1 !important; transform-origin: center; }
+.vinyl-spin { animation: spinVinyl 5s linear infinite !important; opacity: 1 !important; transform-origin: center center; }
+
+/* =========================================
+   LAYAR 2 & 3: PROFIL WANITA DAN PRIA
+   ========================================= */
+.bride-section, .groom-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+    box-sizing: border-box;
+}
+
+.hidden-on-scroll { opacity: 0; }
+
+.bride-photo-container, .groom-photo-container { position: relative; width: 75%; margin-bottom: 20px; }
+.bride-img, .groom-img { width: 100%; height: auto; } 
+
+.bride-flower { 
+    position: absolute; 
+    top: -15%; 
+    right: -25%; 
+    width: 50%; 
+    z-index: 2; 
+    transform-origin: center; /* Titik pusat animasi di tengah bunga */
+    animation: mekarNatural 4s ease-in-out infinite; /* Animasi berjalan terus menerus */
+}
+
+.groom-flower { 
+    position: absolute; 
+    top: -15%; 
+    left: -25%; 
+    width: 50%; 
+    z-index: 2; 
+    transform-origin: center; /* Titik pusat animasi di tengah bunga */
+    animation: mekarNatural 4s ease-in-out infinite; /* Animasi berjalan terus menerus */
+    animation-delay: 1s; /* Diberi jeda sedikit agar mekarnya tidak bebarengan dengan bunga wanita */
+}
+
+/* --- KEYFRAMES: Efek Bunga Mekar --- */
+@keyframes mekarNatural {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg); /* Ukuran normal */
+    }
+    50% { 
+        transform: scale(1.08) rotate(3deg); /* Sedikit membesar dan memutar pelan (efek natural) */
+    }
+}
+
+.bride-info, .groom-info { display: flex; flex-direction: column; align-items: center; text-align: center; }
+
+/* PERBAIKAN: Font dan Margin Teks */
+.bride-title { 
+    font-family: 'Great Vibes', cursive !important; 
+    font-size: 3.5rem; 
+    color: #6b3838; 
+    margin: 0; /* Margin dipindah ke wrapper agar animasi ketik rapi */
+    font-weight: normal; 
+    text-transform: none !important;
+}
+
+.bride-name { 
+    font-family: 'Playfair Display', serif !important; /* Font elegan mendukung huruf kecil */
+    font-size: 1.8rem; 
+    color: #4a2323; 
+    margin: 0; 
+    font-weight: bold; 
+    text-transform: none !important;
+}
+
+.bride-parents { 
+    font-family: Arial, sans-serif; 
+    font-size: 0.85rem; 
+    color: #4a2323; 
+    line-height: 1.5; 
+    margin: 0; 
+    font-weight: 600; 
+}
+
+/* PERBAIKAN: Animasi Ketik (Typing Wrapper) */
+.typing-wrapper {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    margin-bottom: 5px; /* Jarak antar baris */
+    border-right: 2px solid transparent; 
+}
+
+.type-3 { white-space: normal; opacity: 0; }
+
+@keyframes slideMasukKanan { from { opacity: 0; transform: translateX(100px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slideMasukKiri { from { opacity: 0; transform: translateX(-100px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes ketikTeks { from { width: 0; } to { width: 100%; } }
+@keyframes munculPudar { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Trigger Animasi Saat Scroll */
+.tampil-scroll .bride-photo-container { animation: slideMasukKanan 1s ease-out forwards; }
+.tampil-scroll .groom-photo-container { animation: slideMasukKiri 1s ease-out forwards; }
+
+.tampil-scroll .type-1 { animation: ketikTeks 1.5s steps(30, end) forwards; animation-delay: 0.8s; }
+.tampil-scroll .type-2 { animation: ketikTeks 1.5s steps(30, end) forwards; animation-delay: 2.3s; }
+.tampil-scroll .type-3 { width: auto; animation: munculPudar 1s ease-in forwards; animation-delay: 3.8s; }
+
+/* =========================================
+   MEMAKSA ANIMASI BUNGA MEKAR & MUNCUL
+   ========================================= */
+
+.bride-flower { 
+    opacity: 1 !important; /* Kunci agar bunga tidak hilang */
+    animation: mekarNatural 4s ease-in-out infinite !important;
+    transform-origin: center center;
+}
+
+.groom-flower { 
+    opacity: 1 !important; /* Kunci agar bunga tidak hilang */
+    animation: mekarNatural 4s ease-in-out infinite !important;
+    animation-delay: 1s !important;
+    transform-origin: center center;
+}
+
+@keyframes mekarNatural {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    50% { transform: scale(1.08) rotate(3deg); opacity: 1; }
+}
+
+/* =========================================
+   BAGIAN 5: EVENT & COUNTDOWN SECTION
+   ========================================= */
+
+.event-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 10px;
+    box-sizing: border-box;
+}
+
+/* Memaksa font kaligrafi dan warna marun */
+.event-script-title, .event-sub-script {
+    font-family: 'Great Vibes', cursive !important;
+    color: #6b3838 !important;
+    margin: 0 !important;
+    font-weight: normal !important;
+    text-transform: capitalize !important; /* PERBAIKAN: Memaksa huruf depan selalu BESAR */
+}
+
+.event-script-title { font-size: 3.5rem !important; margin-bottom: 5px !important;}
+.event-sub-script { font-size: 3.2rem !important; margin-top: 15px !important; }
+
+
+/* Timer */
+.timer-container {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.timer-text {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2rem !important;
+    font-weight: 900 !important; 
+    color: #3a1616 !important; 
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); 
+}
+
+/* Label Save The Date */
+.badge-date {
+    background-color: #4a1c1c !important;
+    color: #ffffff !important;
+    font-family: 'Playfair Display', serif !important;
+    font-size: 0.9rem !important;
+    padding: 6px 18px !important;
+    border-radius: 20px !important; 
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Detail Teks */
+.event-main-date {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1.1rem !important;
+    font-weight: 900 !important;
+    color: #4a1c1c !important;
+    margin: 0 0 5px 0 !important;
+}
+
+.event-time {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 0.9rem !important;
+    font-weight: 800 !important;
+    color: #4a1c1c !important;
+    margin: 0 !important;
+}
+
+.event-address {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 0.8rem !important;
+    color: #4a1c1c !important;
+    margin: 2px 0 !important; 
+    font-weight: 700 !important;
+}
+
+/* --- ANIMASI MASUK KETIK BERTAHAP (SEQUENTIAL TYPING) --- */
+.tampil-scroll .type-ev-1 { animation: ketikTeks 1s steps(20, end) forwards; animation-delay: 0.2s; }
+.tampil-scroll .type-ev-2 { animation: ketikTeks 1s steps(20, end) forwards; animation-delay: 1.0s; } 
+.tampil-scroll .type-ev-3 { animation: ketikTeks 0.8s steps(15, end) forwards; animation-delay: 1.8s; } 
+.tampil-scroll .type-ev-4 { animation: ketikTeks 1s steps(25, end) forwards; animation-delay: 2.4s; }
+.tampil-scroll .type-ev-5 { animation: ketikTeks 0.8s steps(15, end) forwards; animation-delay: 3.2s; }
+.tampil-scroll .type-ev-6 { animation: ketikTeks 0.8s steps(20, end) forwards; animation-delay: 3.8s; }
+.tampil-scroll .type-ev-7 { animation: ketikTeks 0.8s steps(15, end) forwards; animation-delay: 4.4s; }
+.tampil-scroll .type-ev-8 { animation: ketikTeks 0.8s steps(20, end) forwards; animation-delay: 5.0s; }
+
+/* Animasi 3 Baris Alamat */
+.tampil-scroll .type-ev-9 { animation: ketikTeks 0.8s steps(25, end) forwards; animation-delay: 5.6s; }
+.tampil-scroll .type-ev-10 { animation: ketikTeks 0.8s steps(30, end) forwards; animation-delay: 6.3s; }
+.tampil-scroll .type-ev-11 { animation: ketikTeks 0.5s steps(15, end) forwards; animation-delay: 7.0s; }
+
+/* =========================================
+   PENGATURAN TOMBOL GOOGLE MAPS
+   ========================================= */
+
+.maps-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    opacity: 0; /* Disembunyikan sebelum animasi berjalan */
+    position: relative;
+    z-index: 20; /* Memaksa tombol ada di paling depan agar bisa diklik */
+}
+
+.btn-maps {
+    text-decoration: none !important; /* Menghilangkan garis bawah khas link */
+    cursor: pointer !important;
+    pointer-events: auto !important; /* Memastikan bisa ditekan/diklik */
+}
+
+/* Animasi Muncul Tombol (Muncul dari bawah ke atas) */
+@keyframes munculTombolMaps {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tombol akan muncul setelah teks "Kab. Garut" selesai diketik */
+.tampil-scroll .type-ev-12 { 
+    animation: munculTombolMaps 0.8s ease-out forwards; 
+    animation-delay: 7.5s; 
+}
+
+/* =========================================
+   BAGIAN 6: OUR GALLERY
+   ========================================= */
+
+.gallery-section {
+    position: relative; 
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 15px; /* Jarak bawah dinormalkan kembali karena bunga bawah dihapus */
+    box-sizing: border-box;
+    text-align: center;
+    overflow-x: hidden; 
+}
+
+/* WADAH BUNGA ATAS */
+.flower-top-left-wrap {
+    position: absolute;
+    top: 0;
+    left: -15px;
+    width: 35%; 
+    max-width: 130px;
+    z-index: 20; 
+}
+
+.flower-top-right-wrap {
+    position: absolute;
+    top: 0;
+    right: -15px;
+    width: 35%; 
+    max-width: 130px;
+    z-index: 20;
+}
+
+.bunga-kiri, .bunga-kanan {
+    width: 100%;
+    height: auto;
+    opacity: 0; 
+}
+
+/* Detail Teks Judul */
+.gallery-title {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 3.5rem !important;
+    color: #6b3838 !important;
+    margin: 0 0 20px 0 !important; /* Jarak bawah ditambah sedikit untuk mengganti subtitle yang hilang */
+    font-weight: normal !important;
+    text-transform: capitalize !important;
+    position: relative;
+    z-index: 25; 
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 12px; 
+    width: 95%;
+    max-width: 380px;
+    position: relative;
+    z-index: 10; 
+}
+
+.gallery-img {
+    width: 100%;
+    height: 180px; 
+    object-fit: cover; 
+    border-radius: 12px; 
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.15);
+    opacity: 0; 
+}
+
+/* --- ANIMASI --- */
+.type-gal-1 { width: 0; overflow: hidden; white-space: nowrap; border-right: 2px solid transparent; }
+
+.tampil-scroll .type-gal-1 { animation: ketikTeks 1s steps(20, end) forwards; animation-delay: 0.2s; }
+
+/* Animasi Bunga Masuk */
+@keyframes masukKiri {
+    0% { opacity: 0; transform: translate(-20px, -20px) scale(0.8); }
+    100% { opacity: 1; transform: translate(0, 0) scale(1); }
+}
+@keyframes masukKanan {
+    0% { opacity: 0; transform: translate(20px, -20px) scale(0.8) scaleX(-1); }
+    100% { opacity: 1; transform: translate(0, 0) scale(1) scaleX(-1); }
+}
+
+/* Animasi Bunga Ayun */
+@keyframes ayunKiri {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(3deg) scale(1.05); }
+}
+@keyframes ayunKanan {
+    0%, 100% { transform: rotate(0deg) scale(1) scaleX(-1); }
+    50% { transform: rotate(-3deg) scale(1.05) scaleX(-1); }
+}
+
+/* Eksekusi Animasi Bunga */
+.tampil-scroll .bunga-kiri {
+    animation: masukKiri 1s ease-out forwards, ayunKiri 5s ease-in-out infinite 1s !important;
+}
+.tampil-scroll .bunga-kanan {
+    animation: masukKanan 1s ease-out forwards, ayunKanan 5s ease-in-out infinite 1s !important;
+}
+
+/* Eksekusi Animasi Foto Grid (Dipercepat) */
+@keyframes zoomMuncul {
+    from { opacity: 0; transform: scale(0.8) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.tampil-scroll .gal-anim-1 { animation: zoomMuncul 0.8s ease-out forwards; animation-delay: 1.0s; } 
+.tampil-scroll .gal-anim-2 { animation: zoomMuncul 0.8s ease-out forwards; animation-delay: 1.4s; }
+.tampil-scroll .gal-anim-3 { animation: zoomMuncul 0.8s ease-out forwards; animation-delay: 1.8s; }
+.tampil-scroll .gal-anim-4 { animation: zoomMuncul 0.8s ease-out forwards; animation-delay: 2.2s; }
+
+/* =========================================
+   BAGIAN 7: LOVE STORY
+   ========================================= */
+
+.lovestory-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* Memotong hiasan yang keluar batas */
+}
+
+/* =========================================
+   PERBAIKAN BUNGA LOVE STORY
+   ========================================= */
+
+.flower-top-story {
+    position: absolute;
+    top: -15px;
+    right: -15px; 
+    width: 55%;
+    max-width: 180px;
+    z-index: 20; /* Dinaikkan agar di atas kertas */
+    opacity: 0;
+    transform-origin: top right;
+}
+
+.flower-bottom-story {
+    position: absolute;
+    bottom: -15px;
+    left: -15px; 
+    width: 65%;
+    max-width: 200px;
+    z-index: 20;
+    opacity: 0;
+    transform-origin: bottom left;
+}
+
+/* Animasi Ayun Khusus (Memaksa opacity selalu 1 saat bergerak) */
+@keyframes ayunBungaStory {
+    0%, 100% { transform: rotate(0deg) scale(1); opacity: 1; }
+    50% { transform: rotate(4deg) scale(1.05); opacity: 1; }
+}
+
+/* Trigger Animasi - Paksa Muncul! */
+.tampil-scroll .flower-top-story {
+    opacity: 1 !important; 
+    animation: ayunBungaStory 5s ease-in-out infinite !important;
+}
+
+.tampil-scroll .flower-bottom-story {
+    opacity: 1 !important; 
+    animation: ayunBungaStory 5s ease-in-out infinite !important;
+    animation-delay: 1.5s !important; /* Gerakan ayun dibedakan waktunya */
+}
+
+/* Judul Love Story */
+.story-main-title {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 3.8rem !important;
+    color: #6b3838 !important;
+    margin: 0 0 40px 0 !important;
+    font-weight: normal !important;
+    text-transform: capitalize !important;
+    position: relative;
+    z-index: 10;
+    text-align: center !important; /* Tambahan: Memaksa teks rata tengah */
+    width: 100%; 
+}
+
+/* --- PENGATURAN TIMELINE ZIG-ZAG --- */
+.timeline-container {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+}
+
+.timeline-item {
+    position: relative; /* SANGAT PENTING: Kunci agar bunga tidak lari dari kertas */
+    width: 95%; 
+    margin-bottom: 45px; /* Jarak antar kertas sedikit dilebarkan agar bunga tidak tabrakan */
+    opacity: 0; 
+    
+    background-image: url('Kertas.png'); 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 30px 25px; 
+    box-sizing: border-box;
+    filter: drop-shadow(3px 5px 8px rgba(0,0,0,0.15)); 
+}
+
+/* Mengatur posisi Kiri dan Kanan */
+.timeline-item.left { align-self: flex-start; text-align: left; }
+.timeline-item.right { align-self: flex-end; text-align: right; }
+
+/* --- PENGATURAN BUNGA DI ATAS KERTAS --- */
+.paper-flower {
+    position: absolute;
+    width: 90px; /* Ukuran bunga disesuaikan dengan kertas */
+    z-index: -1; /* Bunga ditaruh sedikit di belakang teks agar teks tetap terbaca jelas */
+    opacity: 1 !important;
+}
+
+/* Posisi Bunga Cerita 1 & 3 */
+.flower-top-right {
+    top: -25px;
+    right: -15px;
+    transform-origin: top right;
+    animation: ayunBungaStory 4s ease-in-out infinite !important;
+}
+
+/* Posisi Bunga Cerita 2 (KIRI ATAS) */
+.flower-kiri-atas {
+    top: -20px; /* Jarak dari atas kertas */
+    left: -25px; /* Jarak dari kiri kertas (semakin minus, semakin ke kiri) */
+    transform-origin: top left;
+    animation: ayunBungaStory 5s ease-in-out infinite !important;
+}
+
+/* Tipografi Cerita */
+.story-title {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1.35rem !important;
+    color: #4a1c1c !important;
+    margin: 0 0 5px 0 !important;
+    font-weight: 800 !important;
+}
+
+.story-date {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 0.95rem !important;
+    color: #7a4141 !important; 
+    margin: 0 0 10px 0 !important;
+    font-weight: 700 !important;
+}
+
+.story-text {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 0.85rem !important;
+    color: #3a1616 !important;
+    line-height: 1.6;
+    margin: 0 !important;
+    font-weight: 500 !important;
+}
+
+/* --- ANIMASI LOVE STORY --- */
+/* Animasi Ketik Judul (Wadah dibuat sejajar tengah) */
+.type-ls-1 { 
+    display: flex; 
+    justify-content: center; /* Kunci agar wadah animasi tepat di tengah */
+    width: 0; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    border-right: 2px solid transparent; 
+    margin: 0 auto; 
+}
+.tampil-scroll .type-ls-1 { animation: ketikTeks 1s steps(20, end) forwards; animation-delay: 0.2s; }
+
+/* Animasi Muncul dari Samping */
+@keyframes slideMunculKiri {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideMunculKanan {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.tampil-scroll .timeline-item.left.ls-anim-1 { animation: slideMunculKiri 0.8s ease-out forwards; animation-delay: 1.2s; }
+.tampil-scroll .timeline-item.right.ls-anim-2 { animation: slideMunculKanan 0.8s ease-out forwards; animation-delay: 2.0s; }
+.tampil-scroll .timeline-item.left.ls-anim-3 { animation: slideMunculKiri 0.8s ease-out forwards; animation-delay: 2.8s; }
+
+/* Trigger Animasi Bunga Mengayun (Menggunakan Keyframes dari Galeri) */
+.tampil-scroll .flower-top-story {
+    /* Muncul dari kanan atas */
+    animation: bungaMasukBawah 1s ease-out forwards, ayunBunga 5s ease-in-out infinite 1s !important;
+}
+.tampil-scroll .flower-bottom-story {
+    /* Muncul dari kiri bawah */
+    animation: bungaMasukAtas 1s ease-out forwards, ayunBunga 5s ease-in-out infinite 1s !important;
+}
+
+/* =========================================
+   PERBAIKAN LAYAR 1 (KARTU & INISIAL BARU)
+   ========================================= */
+
+.middle-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px; 
+    width: 100%;
+    margin-top: -25px; /* PERUBAHAN: Angka diperkecil agar seluruh bagian turun sedikit ke bawah */
+    padding: 0 10px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+}
+
+.left-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px; /* Menurunkan sedikit posisi kartu agar pas di bawah lipatan amplop */
+}
+
+/* Pengaturan Kartu Tengah (Timbul) */
+.kartu-tengah-img {
+    width: 100%;
+    max-width: 200px; 
+    height: auto;
+    z-index: 5;
+    position: relative;
+    filter: drop-shadow(3px 5px 6px rgba(0,0,0,0.3)); /* Efek Bayangan Timbul */
+}
+
+/* Pengaturan Inisial Baru (Timbul) */
+.frame-inisial {
+    width: 110%;
+    max-width: 150x; 
+    height: auto;
+    margin-top: -5px; /* Ditarik sedikit agar rumbainya menempel dengan kartu */
+    z-index: 5;
+    position: relative;
+    filter: drop-shadow(2px 4px 5px rgba(0,0,0,0.3)); /* Efek Bayangan Timbul */
+}
+
+/* Pengaturan Undangan Kanan (Timbul) */
+.frame-undangan {
+    width: 120%;
+    max-width: 250px; 
+    height: auto;
+    z-index: 2;
+    filter: drop-shadow(4px 6px 8px rgba(0,0,0,0.3)); /* Efek Bayangan Timbul */
+}
+
+/* =========================================
+   BAGIAN 8: WEDDING GIFT (TEMA ARCH/LORONG)
+   ========================================= */
+
+.gift-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Memotong kotak biasa menjadi melengkung di atas (Arch) */
+.gift-arch-container {
+    width: 100%;
+    max-width: 340px;
+    background-image: url('bcc.png'); /* Ganti ekstensi ke .jpg jika foto Anda JPG */
+    background-size: cover;
+    background-position: center;
+    
+    /* Ini rahasia lengkungannya! */
+    border-top-left-radius: 170px; 
+    border-top-right-radius: 170px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
+    padding: 70px 20px 50px 20px;
+    box-shadow: 2px 5px 15px rgba(0,0,0,0.15);
+    box-sizing: border-box;
+    opacity: 0;
+    position: relative;
+    z-index: 10;
+}
+
+.gift-arch-title {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 3.2rem !important;
+    color: #6b3838 !important; 
+    margin: 0 0 35px 0 !important;
+    font-weight: normal !important;
+}
+
+/* Susunan Logo, Angka, dan Tombol */
+.bank-item {
+    margin-bottom: 35px;
+    opacity: 0;
+}
+
+.bank-logo {
+    height: 35px; /* Tinggi logo bank */
+    width: auto;
+    margin-bottom: 5px;
+}
+
+.bank-number {
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 1.4rem !important;
+    font-weight: bold !important;
+    color: #4a1c1c !important; /* Warna angka rekening */
+    margin: 0 0 5px 0 !important;
+    letter-spacing: 2px;
+}
+
+.bank-owner {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 0.95rem !important;
+    color: #6b3838 !important;
+    margin: 0 0 10px 0 !important;
+    font-weight: bold;
+}
+
+/* Desain Tombol Copy Bulat Kecil */
+.btn-copy-small {
+    background-color: #6b3838;
+    color: white;
+    border: none;
+    padding: 6px 18px;
+    border-radius: 20px; /* Membuat tombol lonjong */
+    font-family: 'Playfair Display', serif !important;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 1px 3px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.btn-copy-small:hover {
+    background-color: #4a1c1c;
+    transform: translateY(-2px);
+}
+
+/* Susunan Alamat Hadiah */
+.gift-address-item {
+    margin-top: 40px;
+    border-top: 1px solid rgba(107, 56, 56, 0.3); /* Garis pembatas tipis */
+    padding-top: 25px;
+    opacity: 0;
+}
+
+.address-title {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1.1rem !important;
+    color: #4a1c1c !important;
+    margin: 0 0 10px 0 !important;
+    font-weight: 800 !important;
+}
+
+.physical-address {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 0.85rem !important;
+    color: #4a1c1c !important;
+    line-height: 1.6;
+    margin: 0 !important;
+}
+
+/* --- ANIMASI KEMUNCULAN --- */
+@keyframes munculNaikGift {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tampil-scroll .fade-gf-1 { animation: munculNaikGift 1s ease-out forwards; animation-delay: 0.2s; }
+.tampil-scroll .fade-gf-2 { animation: munculNaikGift 1s ease-out forwards; animation-delay: 0.8s; }
+.tampil-scroll .fade-gf-3 { animation: munculNaikGift 1s ease-out forwards; animation-delay: 1.2s; }
+.tampil-scroll .fade-gf-4 { animation: munculNaikGift 1s ease-out forwards; animation-delay: 1.6s; }
+
+/* =========================================
+   BAGIAN 9 & 10: WISHES & RSVP
+   ========================================= */
+.wishes-section, .rsvp-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 15px;
+    box-sizing: border-box;
+}
+
+/* Desain Lorong Tinggi untuk Form */
+.arch-container-tall {
+    width: 100%;
+    max-width: 340px;
+    background-image: url('bcc.png'); /* Menggunakan background lorong yang sama dengan Wedding Gift */
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 170px; 
+    border-top-right-radius: 170px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 70px 20px 40px 20px;
+    box-shadow: 2px 5px 15px rgba(0,0,0,0.15);
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    opacity: 0;
+}
+
+.flower-top-arch {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    z-index: 5;
+    animation: ayunBungaStory 5s ease-in-out infinite !important;
+}
+
+.section-title {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 3.5rem !important;
+    color: #6b3838 !important;
+    margin: 10px 0 10px 0 !important;
+    font-weight: normal !important;
+}
+
+.section-subtitle {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 0.85rem !important;
+    color: #4a1c1c !important;
+    margin-bottom: 25px !important;
+    line-height: 1.5;
+}
+
+/* --- Desain Input & Tombol Form --- */
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    color: #4a1c1c;
+    box-sizing: border-box;
+}
+
+.textarea-field {
+    height: 80px;
+    resize: none;
+}
+
+.btn-send {
+    background-color: #6b3838;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+}
+
+.radio-group {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 12px 10px;
+    border-radius: 8px;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    color: #4a1c1c;
+}
+
+/* --- Desain Kolom Komentar (Buku Tamu) --- */
+.comments-container {
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comment-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 10px 15px;
+    text-align: left;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.comment-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: #4a1c1c;
+    font-size: 0.9rem;
+}
+
+.comment-check {
+    background-color: #6b3838;
+    color: white;
+    font-size: 0.5rem;
+    border-radius: 50%;
+    padding: 2px 4px;
+}
+
+.comment-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    color: #333;
+    margin: 0;
+}
+
+/* =========================================
+   BAGIAN 11: PENUTUP
+   ========================================= */
+.closing-section {
+    width: 100%;
+    padding: 60px 20px 80px 20px;
+    text-align: center;
+}
+
+.closing-image-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 30px auto;
+}
+
+.closing-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+}
+
+.closing-flower-frame {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 190px;
+    height: 190px;
+    z-index: 2;
+}
+
+.closing-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    color: #4a1c1c;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.closing-names {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 4rem !important;
+    color: #6b3838 !important;
+    margin: 0 !important;
+    font-weight: normal !important;
+}
+
+/* Animasi Muncul */
+@keyframes fadeMunculLorong {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.tampil-scroll .fade-in { 
+    animation: fadeMunculLorong 1s ease-out forwards; 
+}
+
+/* =========================================
+   REVISI: LOVE STORY RAPAT & ANIMASI CEPAT
+   ========================================= */
+
+/* 1. Merapatkan Jarak Galeri & Love Story (Tanpa Nilai Minus) */
+.gallery-section {
+    padding-bottom: 10px !important;
+    margin-bottom: 0 !important;
+}
+
+.lovestory-section {
+    padding-top: 10px !important;
+    margin-top: 0 !important;
+}
+
+/* 2. Memastikan Love Story Tetap Muncul Saat di-Scroll */
+.lovestory-section.hidden-on-scroll.tampil-scroll {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* 3. Mempercepat Animasi Bawaan (Agar Tidak Menunggu Lama) */
+.lovestory-section.tampil-scroll .timeline-item,
+.lovestory-section.tampil-scroll .story-content,
+.lovestory-section.tampil-scroll h2,
+.lovestory-section.tampil-scroll .typing-wrapper {
+    /* Animasi tetap ada, tapi durasinya dipercepat jadi setengah detik */
+    animation-duration: 0.5s !important; 
+    /* Jeda antrean dimatikan agar langsung jalan */
+    animation-delay: 0.1s !important; 
+}
+
+/* =========================================
+   KUNCI UTAMA (MEMUNCULKAN SEMUA) & REVISI LOVE STORY
+   ========================================= */
+
+/* 1. Kunci Utama agar Love Story sampai Penutup kembali muncul saat di-scroll */
+.hidden-on-scroll.tampil-scroll,
+.lovestory-section.tampil-scroll,
+.gift-section.tampil-scroll,
+.wishes-section.tampil-scroll,
+.rsvp-section.tampil-scroll,
+.closing-section.tampil-scroll {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* 2. Merapatkan jarak Galeri & Love Story secara aman */
+.gallery-section {
+    padding-bottom: 10px !important;
+    margin-bottom: 0 !important;
+}
+.lovestory-section {
+    padding-top: 10px !important;
+    margin-top: 0 !important;
+}
+
+/* 3. Animasi Love Story dipercepat agar tidak menunggu lama */
+.lovestory-section.tampil-scroll .timeline-item,
+.lovestory-section.tampil-scroll .story-content,
+.lovestory-section.tampil-scroll h2,
+.lovestory-section.tampil-scroll .typing-wrapper {
+    animation-duration: 0.6s !important; 
+    animation-delay: 0.1s !important; 
+}
+
+/* =========================================
+   MEMBUAT KOTAK UCAPAN BISA DI-SCROLL
+   ========================================= */
+
+.comments-container {
+    max-height: 350px !important; /* Batas maksimal tinggi kotak (bisa diubah sesuai selera) */
+    overflow-y: auto !important;  /* Memunculkan scroll ke bawah secara otomatis jika penuh */
+    padding-right: 10px !important; /* Memberi jarak agar teks tidak menabrak scrollbar */
+    margin-top: 20px !important;
+}
+
+/* --- (Opsional) Mempercantik Tampilan Scrollbar --- */
+.comments-container::-webkit-scrollbar {
+    width: 6px; /* Mengatur seberapa tipis scrollbar-nya */
+}
+
+.comments-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05); 
+    border-radius: 10px;
+}
+
+.comments-container::-webkit-scrollbar-thumb {
+    background-color: #80183b; /* Warna marun agar senada dengan tema */
+    border-radius: 10px;
+}
