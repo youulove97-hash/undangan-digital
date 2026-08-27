@@ -1195,10 +1195,9 @@ body {
    PENGATURAN KHUSUS LAYAR HP (MOBILE)
    ========================================= */
 @media screen and (max-width: 768px) {
-    /* Memaksa semua pembungkus teks ke tengah layar */
+    /* 1. Meluruskan teks ke tengah (tanpa merusak gambar) */
     .typing-wrapper, .bride-info, .groom-info, 
-    .event-section, .lovestory-section, .gallery-section,
-    .middle-section {
+    .event-section, .lovestory-section, .gallery-section {
         width: 100% !important;
         text-align: center !important;
         display: flex !important;
@@ -1207,9 +1206,25 @@ body {
         justify-content: center !important;
     }
 
-    /* Mengurangi jarak renggang antara pengantin pria dan wanita */
+    /* 2. Merapikan susunan Gambar Kartu di Tengah */
+    .middle-section {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important; /* Memberi jarak manis antar gambar */
+        margin-top: 20px !important;
+    }
+
+    /* Memperkecil gambar kartu agar proporsional di layar HP */
+    .kartu-tengah-img, .frame-inisial, .frame-undangan {
+        max-width: 80% !important; 
+        height: auto !important;
+        margin: 0 auto !important;
+    }
+
+    /* 3. Merapatkan jarak pengantin */
     .bride-section {
-        margin-bottom: -40px !important; /* Ditarik ke atas agar rapat */
+        margin-bottom: -40px !important; 
         padding-bottom: 0 !important;
     }
     .groom-section {
@@ -1217,14 +1232,12 @@ body {
         padding-top: 0 !important;
     }
 
-    /* Memastikan tombol (Maps & Kirim) ada di tengah */
+    /* 4. Memastikan tombol di tengah */
     .btn-maps, .btn-send {
         margin-left: auto !important;
         margin-right: auto !important;
         display: block !important;
     }
-    
-    /* Merapikan posisi Teks Countdown */
     .timer-text {
         margin: 0 auto !important;
     }
