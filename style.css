@@ -1190,3 +1190,27 @@ body {
     background-color: #80183b; /* Warna marun agar senada dengan tema */
     border-radius: 10px;
 }
+
+/* =========================================
+   PENGATURAN KHUSUS LAYAR HP (MOBILE)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    /* Mengatur agar konten pengantin rapi ke tengah */
+    .bride-section, .groom-section, .bride-info, .groom-info {
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Mengurangi jarak (renggang) antara pengantin wanita dan pria */
+    .bride-section {
+        margin-bottom: 5px !important;
+        padding-bottom: 0 !important;
+    }
+    .groom-section {
+        margin-top: 5px !important;
+        padding-top: 0 !important;
+    }
+}
