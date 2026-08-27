@@ -1272,4 +1272,15 @@ body {
     .timer-text {
         margin: 0 auto !important;
     }
+
+   /* 5. Merapatkan jarak antara Pengantin Pria dan Counting Days */
+    .groom-section {
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
+    }
+    
+    .event-section {
+        margin-top: -40px !important; /* Menarik teks Counting Days ke atas */
+        padding-top: 0px !important;
+    }
 }
