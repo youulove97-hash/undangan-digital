@@ -1273,14 +1273,16 @@ body {
         margin: 0 auto !important;
     }
 
-   /* 5. Merapatkan jarak antara Pengantin Pria dan Counting Days */
-    .groom-section {
-        margin-bottom: 0px !important;
-        padding-bottom: 0px !important;
+   /* Memangkas habis ruang kosong di bawah Pengantin Pria */
+    .groom-section, .groom-info {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
     }
-    
+
+    /* Menarik bagian Counting Days ke atas dan menghapus bantalan bawaan */
     .event-section {
-        margin-top: -40px !important; /* Menarik teks Counting Days ke atas */
-        padding-top: 0px !important;
+        margin-top: -60px !important; /* Silakan perbesar jadi -80px atau -100px jika masih kurang narik */
+        padding-top: 0 !important;
+        min-height: auto !important; /* Menghapus tinggi paksaan bawaan dari laptop */
     }
 }
