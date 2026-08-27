@@ -1195,7 +1195,54 @@ body {
    PENGATURAN KHUSUS LAYAR HP (MOBILE)
    ========================================= */
 @media screen and (max-width: 768px) {
-    /* 1. Meluruskan teks ke tengah (tanpa merusak gambar) */
+    /* 1. Mengembalikan posisi kartu agar berdampingan (Kiri & Kanan) */
+    .middle-section {
+        display: flex !important;
+        flex-direction: row !important; /* Membuat kiri & kanan berdampingan */
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px !important;
+        width: 100% !important;
+        padding: 0 10px !important;
+        box-sizing: border-box !important;
+        margin-top: 10px !important;
+    }
+
+    /* Pengaturan kolom kiri (Kartu Ayat + Inisial) */
+    .left-col {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 42% !important;
+        gap: 5px !important;
+    }
+
+    /* Pengaturan kolom kanan (Kartu Nama Undangan) */
+    .right-col {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 52% !important;
+    }
+
+    /* Menyesuaikan ukuran masing-masing gambar agar pas di layar HP */
+    .kartu-tengah-img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .frame-inisial {
+        width: 65% !important;
+        height: auto !important;
+    }
+
+    .frame-undangan {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* 2. Merapikan teks bagian lain ke tengah */
     .typing-wrapper, .bride-info, .groom-info, 
     .event-section, .lovestory-section, .gallery-section {
         width: 100% !important;
@@ -1206,23 +1253,7 @@ body {
         justify-content: center !important;
     }
 
-    /* 2. Merapikan susunan Gambar Kartu di Tengah */
-    .middle-section {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 15px !important; /* Memberi jarak manis antar gambar */
-        margin-top: 20px !important;
-    }
-
-    /* Memperkecil gambar kartu agar proporsional di layar HP */
-    .kartu-tengah-img, .frame-inisial, .frame-undangan {
-        max-width: 80% !important; 
-        height: auto !important;
-        margin: 0 auto !important;
-    }
-
-    /* 3. Merapatkan jarak pengantin */
+    /* 3. Merapatkan jarak foto pengantin */
     .bride-section {
         margin-bottom: -40px !important; 
         padding-bottom: 0 !important;
