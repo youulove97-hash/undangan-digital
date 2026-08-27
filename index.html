@@ -239,7 +239,7 @@
                 </div>
             </div>
 
-        <!-- =====================================
+       <!-- =====================================
              BAGIAN 9: WISHES (BUKU TAMU)
              ===================================== -->
             <div class="wishes-section hidden-on-scroll">
@@ -255,11 +255,11 @@
                         <button onclick="kirimUcapan()" class="btn-send">Kirim Ucapan</button>
                     </div>
 
-                    <!-- Tempat Ucapan Baru Akan Muncul -->
+                    <!-- Tempat Ucapan Baru Akan Muncul dari Google Sheets -->
                     <div class="comments-container" id="daftarUcapan">
                         <div class="comment-box">
                             <div class="comment-header">
-                                <span class="comment-name">Dyu</span>
+                                <span class="comment-name">Admin</span>
                                 <span class="comment-check">✔</span>
                             </div>
                             <p class="comment-text">Semoga lancar sampai hari H!</p>
@@ -320,13 +320,16 @@
                 </div>
             </div>
 
-        <!-- INI 3 PENUTUP WADAH YANG HILANG -->
+        <!-- INI 3 PENUTUP WADAH -->
         </div> 
     </div> 
 </div> 
 
-<!-- SCRIPT COPY REKENING KEMBALI DIMASUKKAN DI SINI -->
+<!-- ================================================== -->
+<!-- SEMUA SCRIPT DIGABUNG DI SINI AGAR RAPI DAN JALAN -->
+<!-- ================================================== -->
 <script>
+    // 1. SCRIPT UNTUK COPY REKENING
     function salinRekening(idElemen, tombol) {
         var teksRekening = document.getElementById(idElemen).innerText;
         var inputRahasia = document.createElement("input");
@@ -346,13 +349,45 @@
             tombol.style.backgroundColor = "#6b3838";
         }, 2000);
     }
-</script>
 
-<!-- SCRIPT BUKU TAMU (TERHUBUNG KE GOOGLE SHEETS) -->
-<script>
-    // Ini adalah link Google Sheets Anda
+    // 2. LINK GOOGLE APPS SCRIPT ANDA (SATU UNTUK SEMUA)
     const scriptURL = 'https://script.google.com/macros/s/AKfycbxBRojOwUcAxOVamL7F5YgWwfsaeJ5fYdo9ULAClGdEJyIPa4HsvmvcNd7tgWAwewy4Xw/exec';
 
+    // 3. FUNGSI UNTUK MENGAMBIL DAN MENAMPILKAN UCAPAN SECARA PERMANEN
+    function loadUcapan() {
+        fetch(scriptURL)
+            .then(response => response.json())
+            .then(data => {
+                const daftarUcapan = document.getElementById('daftarUcapan'); 
+                daftarUcapan.innerHTML = ''; // Kosongkan wadah
+                
+                // Menyusun data dari Spreadsheet ke bentuk HTML Comment Box
+                data.forEach(item => {
+                    // Cek nama kolom (Bisa huruf besar/kecil tergantung di spreadsheet Anda)
+                    let namaPengirim = item.nama || item.Nama || item.NAMA;
+                    let isiUcapan = item.ucapan || item.Ucapan || item.UCAPAN;
+
+                    if (namaPengirim && isiUcapan) { 
+                        daftarUcapan.innerHTML = `
+                            <div class="comment-box">
+                                <div class="comment-header">
+                                    <span class="comment-name">${namaPengirim}</span>
+                                    <span class="comment-check">✔</span>
+                                </div>
+                                <p class="comment-text">${isiUcapan}</p>
+                            </div>
+                        ` + daftarUcapan.innerHTML; // Tambah ke atas
+                    }
+                });
+            })
+            .catch(error => console.error('Gagal mengambil data:', error.message));
+    }
+
+    // Jalankan fungsi loadUcapan saat halaman pertama kali dibuka
+    window.addEventListener('load', loadUcapan);
+
+
+    // 4. FUNGSI KIRIM UCAPAN
     function kirimUcapan() {
         var nama = document.getElementById("namaTamu").value;
         var ucapan = document.getElementById("ucapanTamu").value;
@@ -363,22 +398,18 @@
             return;
         }
 
-        // Mengubah teks tombol saat proses pengiriman
         tombol.innerHTML = "Mengirim...";
         tombol.disabled = true;
 
-        // Menyiapkan data untuk dikirim ke Google Sheets
         var formData = new FormData();
         formData.append('nama', nama);
         formData.append('ucapan', ucapan);
 
-        // Proses mengirim data
         fetch(scriptURL, { method: 'POST', body: formData})
             .then(response => {
-                // Jika berhasil terkirim, tampilkan ucapan di undangan
+                // Munculkan langsung tanpa tunggu reload
                 var kotakBaru = document.createElement("div");
                 kotakBaru.className = "comment-box";
-                
                 kotakBaru.innerHTML = `
                     <div class="comment-header">
                         <span class="comment-name">${nama}</span>
@@ -386,17 +417,13 @@
                     </div>
                     <p class="comment-text">${ucapan}</p>
                 `;
-
                 var daftar = document.getElementById("daftarUcapan");
-                daftar.insertBefore(kotakBaru, daftar.firstChild); // Memasukkan di urutan paling atas
+                daftar.insertBefore(kotakBaru, daftar.firstChild);
 
-                // Mengosongkan form dan mengembalikan tombol
                 document.getElementById("namaTamu").value = "";
                 document.getElementById("ucapanTamu").value = "";
                 tombol.innerHTML = "Kirim Ucapan";
                 tombol.disabled = false;
-                
-                alert("Terima kasih! Ucapan Anda berhasil disimpan.");
             })
             .catch(error => {
                 alert("Maaf, terjadi kesalahan jaringan. Silakan coba lagi.");
@@ -405,14 +432,13 @@
             });
     }
 
-// --- FUNGSI MENGIRIM DATA RSVP ---
+    // 5. FUNGSI KIRIM RSVP
     function kirimRSVP() {
         var nama = document.getElementById("namaRsvp").value;
         var jumlah = document.getElementById("jumlahTamu").value;
         var domisili = document.getElementById("domisili").value;
         var tombol = document.getElementById("btnKirimRsvp");
         
-        // Mengecek pilihan Hadir / Tidak Hadir
         var kehadiran = "";
         var radioHadir = document.getElementsByName("statusHadir");
         for (var i = 0; i < radioHadir.length; i++) {
@@ -422,27 +448,22 @@
             }
         }
         
-        // Memastikan Nama dan Pilihan Kehadiran tidak kosong
         if(nama === "" || kehadiran === "") {
             alert("Mohon isi Nama dan Kepastian Kehadiran Anda!");
             return;
         }
 
-        // Efek tombol saat memuat
         tombol.innerHTML = "Mengirim...";
         tombol.disabled = true;
 
-        // Menyiapkan data
         var formData = new FormData();
         formData.append('nama', nama);
         formData.append('kehadiran', kehadiran);
         formData.append('jumlah', jumlah);
         formData.append('domisili', domisili);
 
-        // Mengirim data ke Google Sheets
         fetch(scriptURL, { method: 'POST', body: formData})
             .then(response => {
-                // Mengosongkan form setelah sukses
                 document.getElementById("namaRsvp").value = "";
                 document.getElementById("jumlahTamu").value = "";
                 document.getElementById("domisili").value = "";
@@ -459,8 +480,7 @@
             });
     }
 
-<!-- SCRIPT SENSOR SCROLL (MEMUNCULKAN ANIMASI OTOMATIS) -->
-
+    // 6. SCRIPT SENSOR SCROLL (MEMUNCULKAN ANIMASI OTOMATIS)
     document.addEventListener("DOMContentLoaded", function() {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -470,7 +490,6 @@
             });
         }, { threshold: 0.15 }); 
 
-        // Typo 'documen' sudah diperbaiki menjadi 'document' di baris ini
         const halamanSembunyi = document.querySelectorAll('.hidden-on-scroll, .invitation-page, .event-section, .lovestory-section, .gallery-section, .gift-section, .wishes-section, .rsvp-section, .closing-section');
         
         halamanSembunyi.forEach((el) => {
