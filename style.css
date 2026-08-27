@@ -1195,8 +1195,11 @@ body {
    PENGATURAN KHUSUS LAYAR HP (MOBILE)
    ========================================= */
 @media screen and (max-width: 768px) {
-    /* Mengatur agar konten pengantin rapi ke tengah */
-    .bride-section, .groom-section, .bride-info, .groom-info {
+    /* Memaksa semua pembungkus teks ke tengah layar */
+    .typing-wrapper, .bride-info, .groom-info, 
+    .event-section, .lovestory-section, .gallery-section,
+    .middle-section {
+        width: 100% !important;
         text-align: center !important;
         display: flex !important;
         flex-direction: column !important;
@@ -1204,13 +1207,25 @@ body {
         justify-content: center !important;
     }
 
-    /* Mengurangi jarak (renggang) antara pengantin wanita dan pria */
+    /* Mengurangi jarak renggang antara pengantin pria dan wanita */
     .bride-section {
-        margin-bottom: 5px !important;
+        margin-bottom: -40px !important; /* Ditarik ke atas agar rapat */
         padding-bottom: 0 !important;
     }
     .groom-section {
-        margin-top: 5px !important;
+        margin-top: 0px !important;
         padding-top: 0 !important;
+    }
+
+    /* Memastikan tombol (Maps & Kirim) ada di tengah */
+    .btn-maps, .btn-send {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+    }
+    
+    /* Merapikan posisi Teks Countdown */
+    .timer-text {
+        margin: 0 auto !important;
     }
 }
